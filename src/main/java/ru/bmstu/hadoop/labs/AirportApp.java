@@ -26,7 +26,7 @@ public class AirportApp {
         job.setMapOutputKeyClass(AirportComparable.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
-        job.setNumReduceTasks(5);
+        job.setNumReduceTasks(2);
         System.exit(job.waitForCompletion(true) ? 0 : 1);
     }
 }
