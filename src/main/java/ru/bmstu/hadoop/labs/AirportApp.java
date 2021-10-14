@@ -17,7 +17,7 @@ public class AirportApp {
         }
         Job job = Job.getInstance();
         job.setJarByClass(AirportApp.class);
-        job.setJobName("JoinJob sort");
+        job.setJobName("JoinJob airport");
         MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, FlightsMapper.class);
         MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, AirportsMapper.class);
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
@@ -25,7 +25,7 @@ public class AirportApp {
         job.setPartitionerClass(AirportPartitioner.class);
         job.setGroupingComparatorClass(AirportComparator.class);
         job.setReducerClass(AirportReducer.class);
-        job.setMapOutputKeyClass(TextPair.class);
+        job.setMapOutputKeyClass(AirportWritable.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
         job.setNumReduceTasks(2);
