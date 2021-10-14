@@ -14,13 +14,13 @@ public class FlightsMapper extends Mapper<LongWritable, Text, Text, IntWritable>
             InterruptedException {
         String[] columns = value.toString().split(",");
         if (key.get() > 0) {
-            String airportId = columns[AIRPORT_INDEX];
             String delayTime = columns[DELAY_TIME_INDEX];
             if (delayTime.equals("")) {
                 return;
             }
             float delay = Float.parseFloat(delayTime);
-            
+            int airportId = Integer.parseInt(columns[AIRPORT_INDEX]);
+            context.write()
         }
     }
 }
