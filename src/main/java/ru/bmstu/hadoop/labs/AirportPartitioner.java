@@ -1,4 +1,11 @@
 package ru.bmstu.hadoop.labs;
 
-public class AirportPartitioner {
+import org.apache.hadoop.mapreduce.Partitioner;
+
+public class AirportPartitioner extends Partitioner {
+
+    @Override
+    public int getPartition(Object o, Object o2, int i) {
+        return 0;
+    }
 }
