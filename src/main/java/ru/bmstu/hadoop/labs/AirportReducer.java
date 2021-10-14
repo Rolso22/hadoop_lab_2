@@ -1,2 +1,7 @@
-package ru.bmstu.hadoop.labs;public class AirportReducer {
+package ru.bmstu.hadoop.labs;
+
+import org.apache.hadoop.mapreduce.Reducer;
+
+public class AirportReducer extends Reducer {
+
 }
