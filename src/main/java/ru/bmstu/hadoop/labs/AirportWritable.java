@@ -1,10 +1,11 @@
 package ru.bmstu.hadoop.labs;
 
 import org.apache.hadoop.io.WritableComparable;
-
 import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
+
+import static ru.bmstu.hadoop.labs.Constants.*;
 
 public class AirportWritable implements WritableComparable {
 

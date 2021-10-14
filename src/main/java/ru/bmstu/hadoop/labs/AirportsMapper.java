@@ -6,6 +6,8 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 import java.io.IOException;
 
+import static ru.bmstu.hadoop.labs.Constants.*;
+
 public class AirportsMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException,
