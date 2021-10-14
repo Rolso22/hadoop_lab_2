@@ -9,8 +9,8 @@ import static ru.bmstu.hadoop.labs.Constants.*;
 
 public class AirportComparable implements WritableComparable {
 
-    private final int airportId;
-    private final int flag;
+    private int airportId;
+    private int flag;
 
     public AirportComparable(int airportId, int flag) {
         this.airportId = airportId;
@@ -39,6 +39,6 @@ public class AirportComparable implements WritableComparable {
     @Override
     public void readFields(DataInput dataInput) throws IOException {
         flag = dataInput.readInt();
-        
+        airportId = dataInput.readInt();
     }
 }
