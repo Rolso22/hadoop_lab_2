@@ -21,16 +21,8 @@ public class AirportComparable implements WritableComparable {
         return airportId;
     }
 
-    public void setAirportId(int airportId) {
-        this.airportId = airportId;
-    }
-
     public int getFlag() {
         return flag;
-    }
-
-    public void setFlag(int flag) {
-        this.flag = flag;
     }
 
     @Override

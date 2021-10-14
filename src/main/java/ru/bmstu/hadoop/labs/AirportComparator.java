@@ -9,6 +9,6 @@ public class AirportComparator extends WritableComparator {
 
     @Override
     public int compare(AirportComparable a, AirportComparable b) {
-        return Integer.compare(a, b);
+        return Integer.compare(a.getAirportId(), b.getAirportId());
     }
 }
