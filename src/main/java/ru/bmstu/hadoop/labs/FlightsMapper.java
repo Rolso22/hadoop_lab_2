@@ -1,6 +1,6 @@
 package ru.bmstu.hadoop.labs;
 
-import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.FloatWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
@@ -8,7 +8,7 @@ import java.io.IOException;
 
 import static ru.bmstu.hadoop.labs.Constants.*;
 
-public class FlightsMapper extends Mapper<LongWritable, Text, AirportComparable, IntWritable> {
+public class FlightsMapper extends Mapper<LongWritable, Text, AirportComparable, FloatWritable> {
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException,
             InterruptedException {
@@ -20,7 +20,7 @@ public class FlightsMapper extends Mapper<LongWritable, Text, AirportComparable,
             }
             float delay = Float.parseFloat(delayTime);
             int airportId = Integer.parseInt(columns[AIRPORT_INDEX]);
-            context.write(new AirportComparable(airportId, AIRPORT_FLAG), delay)
+            context.write(new AirportComparable(airportId, AIRPORT_FLAG), new FloatWritable(delay));
         }
     }
 }
