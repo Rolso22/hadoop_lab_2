@@ -1,2 +1,4 @@
-package ru.bmstu.hadoop.labs;public class AirportPartitioner {
+package ru.bmstu.hadoop.labs;
+
+public class AirportPartitioner {
 }

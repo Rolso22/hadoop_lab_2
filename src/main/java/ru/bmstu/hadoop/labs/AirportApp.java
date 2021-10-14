@@ -12,7 +12,7 @@ import org.apache.hadoop.mapreduce.Job;
 public class AirportApp {
     public static void main(String[] args) throws Exception {
         if (args.length != 3) {
-            System.err.println("Usage: AirportApp <input path> <output path>");
+            System.err.println("Usage: AirportApp <flight path> <airport path> <output path>");
             System.exit(-1);
         }
         Job job = Job.getInstance();
@@ -20,9 +20,9 @@ public class AirportApp {
         job.setJobName("JoinJob sort");
         MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, FlightsMapper.class);
         MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, AirportsMapper.class);
-
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
-        job.setPartitionerClass(TextPair.FirstPartitioner.class);
+
+        job.setPartitionerClass(AirportPartitioner.class);
         job.setGroupingComparatorClass(TextPair.FirstComparator.class);
         job.setReducerClass(JoinReducer.class);
         job.setMapOutputKeyClass(TextPair.class);
