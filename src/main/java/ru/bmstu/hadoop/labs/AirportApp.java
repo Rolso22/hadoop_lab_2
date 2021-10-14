@@ -1,9 +1,7 @@
 package ru.bmstu.hadoop.labs;
 
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
-import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.MultipleInputs;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
@@ -25,7 +23,7 @@ public class AirportApp {
         job.setPartitionerClass(AirportPartitioner.class);
         job.setGroupingComparatorClass(AirportComparator.class);
         job.setReducerClass(AirportReducer.class);
-        job.setMapOutputKeyClass(AirportWritable.class);
+        job.setMapOutputKeyClass(AirportComparable.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
         job.setNumReduceTasks(5);

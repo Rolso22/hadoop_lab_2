@@ -7,7 +7,10 @@ import java.io.IOException;
 
 import static ru.bmstu.hadoop.labs.Constants.*;
 
-public class AirportWritable implements WritableComparable {
+public class AirportComparable implements WritableComparable {
+
+    private int airportId;
+    private int 
 
     @Override
     public int compareTo(Object o) {
