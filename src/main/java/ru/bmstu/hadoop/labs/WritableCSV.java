@@ -8,12 +8,9 @@ import java.io.DataOutput;
 import java.io.IOException;
 
 public class WritableCSV implements Writable {
-
-    private JsonObject 
-
     @Override
     public void write(DataOutput dataOutput) throws IOException {
-        dataOutput.write();
+        
     }
 
     @Override
