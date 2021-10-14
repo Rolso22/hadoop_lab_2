@@ -14,6 +14,7 @@ public class AirportsMapper extends Mapper<LongWritable, Text, Text, IntWritable
             InterruptedException {
         String[] columns = value.toString().split("\",\"");
         if (key.get() > 0) {
+            int airport = Integer.parseInt(columns[CODE_INDEX].replaceAll("\"", ""));
             
         }
     }
