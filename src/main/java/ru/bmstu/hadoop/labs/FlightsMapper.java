@@ -8,7 +8,7 @@ import java.io.IOException;
 
 import static ru.bmstu.hadoop.labs.Constants.*;
 
-public class FlightsMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
+public class FlightsMapper extends Mapper<LongWritable, Text, AirportComparable, IntWritable> {
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException,
             InterruptedException {
