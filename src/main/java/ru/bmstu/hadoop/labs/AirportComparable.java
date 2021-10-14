@@ -10,7 +10,14 @@ import static ru.bmstu.hadoop.labs.Constants.*;
 public class AirportComparable implements WritableComparable {
 
     private int airportId;
-    private int 
+    private int flag;
+
+    public AirportComparable(int airportId, int flag) {
+        this.airportId = airportId;
+        this.flag = flag;
+    }
+
+
 
     @Override
     public int compareTo(Object o) {
