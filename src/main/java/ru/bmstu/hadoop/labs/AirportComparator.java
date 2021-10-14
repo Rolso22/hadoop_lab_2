@@ -1,14 +1,17 @@
 package ru.bmstu.hadoop.labs;
 
+import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.io.WritableComparator;
 
 public class AirportComparator extends WritableComparator {
-    protected AirportComparator() {
+    public AirportComparator() {
         super(AirportComparable.class);
     }
 
     @Override
-    public int compare(AirportComparable a, AirportComparable b) {
-        return Integer.compare(a.getAirportId(), b.getAirportId());
+    public int compare(WritableComparable a, WritableComparable b) {
+        AirportComparable airportA = (AirportComparable) a;
+        AirportComparable airportB = (AirportComparable) b;
+        return Integer.compare(airportA.getAirportId(), airportB.getAirportId());
     }
 }
