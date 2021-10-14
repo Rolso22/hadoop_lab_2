@@ -11,6 +11,9 @@ import org.apache.hadoop.mapreduce.Job;
 
 public class AirportApp {
     public static void main(String[] args) throws Exception {
+        if (args.length != 3) {
+            
+        }
         Job job = Job.getInstance();
         job.setJarByClass(AirportApp.class);
         job.setJobName("JoinJob sort");
