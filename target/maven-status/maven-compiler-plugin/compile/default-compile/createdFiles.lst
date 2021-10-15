@@ -1,0 +1,8 @@
+ru/bmstu/hadoop/labs/AirportComparator.class
+ru/bmstu/hadoop/labs/FlightsMapper.class
+ru/bmstu/hadoop/labs/AirportApp.class
+ru/bmstu/hadoop/labs/AirportComparable.class
+ru/bmstu/hadoop/labs/AirportReducer.class
+ru/bmstu/hadoop/labs/AirportsMapper.class
+ru/bmstu/hadoop/labs/AirportPartitioner.class
+ru/bmstu/hadoop/labs/Constants.class
