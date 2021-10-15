@@ -10,6 +10,8 @@ public class AirportReducer extends Reducer<AirportComparable, Text, Text, Text>
     @Override
     protected void reduce(AirportComparable key, Iterator<Text> values, Context context) {
         String airportName = values.next().toString();
+        int max = Integer.MAX_VALUE;
+        int min = Integer.MIN_VALUE;
         
     }
 }
