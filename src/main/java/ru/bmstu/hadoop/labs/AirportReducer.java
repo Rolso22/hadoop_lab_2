@@ -17,7 +17,7 @@ public class AirportReducer extends Reducer<AirportComparable, Text, Text, Text>
         float max = Float.MIN_VALUE;
         float min = Float.MAX_VALUE;
         int count = 0;
-        float sum = 0;
+        float sum = 0.0f;
         if (!itr.hasNext()) return;
         while (itr.hasNext()) {
             float val = Float.parseFloat(itr.next().toString());
