@@ -18,7 +18,8 @@ public class FlightsMapper extends Mapper<LongWritable, Text, AirportComparable,
                 return;
             }
             int airportId = Integer.parseInt(columns[AIRPORT_INDEX]);
-            context.write(new AirportComparable(airportId, FLIGHT_FLAG), new Text(delayTime));
+            float delay = Float.parseFloat(delayTime);
+            if (delay > 0.0f) context.write(new AirportComparable(airportId, FLIGHT_FLAG), new Text(delayTime));
         }
     }
 }
