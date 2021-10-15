@@ -30,7 +30,7 @@ public class AirportComparable implements WritableComparable {
     public int compareTo(Object o) {
         if (this.getAirportId() > ((AirportComparable) o).getAirportId()) return 1;
         if (this.getAirportId() < ((AirportComparable) o).getAirportId()) return -1;
-        return Integer.compare(((AirportComparable) o).getFlag(), this.getFlag());
+        return Integer.compare(this.getFlag(), ((AirportComparable) o).getFlag());
     }
 
     @Override
