@@ -14,11 +14,12 @@ public class FlightsMapper extends Mapper<LongWritable, Text, AirportComparable,
         String[] columns = value.toString().split(",");
         if (key.get() > 0) {
             String delayTime = columns[DELAY_TIME_INDEX];
-            if (!delayTime.equals("")) {
-                int airportId = Integer.parseInt(columns[AIRPORT_INDEX]);
-                float delay = Float.parseFloat(delayTime);
-                if (delay > 0.0f) context.write(new AirportComparable(airportId, FLIGHT_FLAG), new Text(delayTime));
+            if (delayTime.equals("")) {
+                return;
             }
+            int airportId = Integer.parseInt(columns[AIRPORT_INDEX]);
+            float delay = Float.parseFloat(delayTime);
+            if (delay > 0.0f) context.write(new AirportComparable(airportId, FLIGHT_FLAG), new Text(delayTime));
         }
     }
 }
