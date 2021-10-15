@@ -41,7 +41,7 @@ public class AirportComparable implements WritableComparable {
 
     @Override
     public void readFields(DataInput dataInput) throws IOException {
-        airportId = dataInput.readInt();
         flag = dataInput.readInt();
+        airportId = dataInput.readInt();
     }
 }
