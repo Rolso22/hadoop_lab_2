@@ -10,7 +10,7 @@ import static ru.bmstu.hadoop.labs.Constants.*;
 
 public class AirportReducer extends Reducer {
     @Override
-    protected void reduce(AirportComparable key, Iterator<Text> value, Context context) {
+    protected void reduce(AirportComparable key, Iterator<Text> values, Context context) {
         
     }
 }
