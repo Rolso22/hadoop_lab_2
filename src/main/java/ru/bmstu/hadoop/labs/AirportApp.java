@@ -24,6 +24,7 @@ public class AirportApp {
         job.setGroupingComparatorClass(AirportComparator.class);
         job.setReducerClass(AirportReducer.class);
         job.setMapOutputKeyClass(AirportComparable.class);
+        job.setMapOutputValueClass(Text.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
         job.setNumReduceTasks(2);
