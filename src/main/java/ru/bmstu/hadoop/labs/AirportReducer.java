@@ -23,6 +23,6 @@ public class AirportReducer extends Reducer<AirportComparable, Text, Text, Text>
             sum += val;
             count++;
         }
-        context.write(new Text(airportName), new Text("min: " + min + "\n" + "max: " + max + "\n" + "average: " + sum/count));
+        context.write(new Text(airportName), new Text("\nmin: " + min + "\n" + "max: " + max + "\n" + "average: " + sum/count));
     }
 }
