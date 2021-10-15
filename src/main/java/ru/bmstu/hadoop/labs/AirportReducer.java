@@ -13,6 +13,11 @@ public class AirportReducer extends Reducer<AirportComparable, Text, Text, Text>
     }
 
     @Override
+    protected void reduce(AirportComparable key, Iterable<Text> values, Reducer<AirportComparable, Text, Text, Text>.Context context) throws IOException, InterruptedException {
+        super.reduce(key, values, context);
+    }
+
+    @Override
     protected void reduce(AirportComparable key, Iterator<Text> values, Context context) throws IOException, InterruptedException {
         String airportName = values.next().toString();
         float max = Float.MIN_VALUE;
