@@ -5,8 +5,6 @@ import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
-import static ru.bmstu.hadoop.labs.Constants.*;
-
 public class AirportComparable implements WritableComparable {
 
     private int airportId;
@@ -19,10 +17,6 @@ public class AirportComparable implements WritableComparable {
 
     public int getAirportId() {
         return airportId;
-    }
-
-    public int getFlag() {
-        return flag;
     }
 
     @Override
