@@ -12,6 +12,7 @@ public class AirportReducer extends Reducer<AirportComparable, Text, Text, Text>
         Iterator<Text> itr = values.iterator();
         String airportName = itr.next().toString();
         System.out.println("airport: " + airportName);
+        System.out.println("v: " + itr.next().toString());
         float max = Float.MIN_VALUE;
         float min = Float.MAX_VALUE;
         int count = 0;
