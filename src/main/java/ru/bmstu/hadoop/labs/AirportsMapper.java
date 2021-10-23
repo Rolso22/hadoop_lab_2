@@ -11,7 +11,7 @@ public class AirportsMapper extends Mapper<LongWritable, Text, AirportComparable
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException,
             InterruptedException {
-        String[] columns = value.toString().split("\",\"");
+        String[] columns = value.toString().split(DELIMETER);
         if (key.get() > 0) {
             int airportId = Integer.parseInt(columns[CODE_INDEX].replaceAll("\"", ""));
             String airportName = columns[DESCRIPTION_INDEX].replaceAll("\"", "");
