@@ -13,9 +13,13 @@ public class AirportsMapper extends Mapper<LongWritable, Text, AirportComparable
             InterruptedException {
         String[] columns = value.toString().split(DELIMETER);
         if (key.get() > 0) {
-            int airportId = Integer.parseInt(columns[CODE_INDEX].replaceAll("\"", ""));
-            String airportName = columns[DESCRIPTION_INDEX].replaceAll("\"", "");
+            int airportId = Integer.parseInt(deleteQuotes(columns[CODE_INDEX]));
+            String airportName = deleteQuotes(columns[DESCRIPTION_INDEX]);
             context.write(new AirportComparable(airportId, AIRPORT_FLAG), new Text(airportName));
         }
+    }
+
+    private String deleteQuotes(String str) {
+        return str.replaceAll("\"", "");
     }
 }
