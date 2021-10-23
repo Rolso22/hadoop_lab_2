@@ -7,5 +7,6 @@ public class Constants {
     public static final int FLIGHT_FLAG = 1;
     public static final int CODE_INDEX = 0;
     public static final int DESCRIPTION_INDEX = 1;
-    public static final String DELIMETER = "\",\"";
+    public static final String DELIMITER_COMMA_WITH_QUOTES = "\",\"";
+    public static final String DELIMITER_COMMA = ",";
 }

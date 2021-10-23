@@ -11,10 +11,10 @@ public class FlightsMapper extends Mapper<LongWritable, Text, AirportComparable,
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException,
             InterruptedException {
-        String[] columns = value.toString().split(",");
+        String[] columns = value.toString().split(DELIMITER_COMMA);
         if (key.get() > 0) {
             String delayTime = columns[DELAY_TIME_INDEX];
-            if (delayTime.equals("")) {
+            if (delayTime.isEmpty()) {
                 return;
             }
             int airportId = Integer.parseInt(columns[AIRPORT_INDEX]);
